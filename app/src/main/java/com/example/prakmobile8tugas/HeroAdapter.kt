@@ -20,6 +20,8 @@ class HeroAdapter(private val heroList: List<Hero>) :
         val currentItem = heroList[position]
         holder.imageView.setImageResource(currentItem.image)
         holder.textView.text = currentItem.name
+        holder.birth.text = currentItem.dateOfBirth
+        holder.death.text = currentItem.dateOfDeath
     }
 
     override fun getItemCount(): Int {
@@ -28,6 +30,8 @@ class HeroAdapter(private val heroList: List<Hero>) :
 
     class HeroViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.imageView)
-        val textView: TextView = itemView.findViewById(R.id.textView)
+        val textView: TextView = itemView.findViewById(R.id.textViewName)
+        val birth: TextView = itemView.findViewById(R.id.textViewDateOfBirth)
+        val death: TextView = itemView.findViewById(R.id.textViewDateOfDeath)
     }
 }
